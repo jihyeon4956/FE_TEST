@@ -65,6 +65,7 @@ function SignInModal() {
 
   const kakaoLogin: () => void = () => {
     const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_REST_API_KEY}&redirect_uri=${import.meta.env.VITE_APP_FE_URL}/login/kakao&response_type=code`;
+    console.log("카카오 로그인 버튼 시작")
     window.location.href = kakaoURL;
   };
   

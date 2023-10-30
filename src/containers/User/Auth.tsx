@@ -6,12 +6,15 @@ import { useSetRecoilState } from 'recoil';
 import { isLoggedInState } from '@/recoil/atoms/loggedHeaderAtom';
  
 const Auth = () => {
+  console.log("라우팅탐");
   const code = window.location.search;
-  // console.log(code);
+  console.log(code);
   const navigate = useNavigate();
+  console.log("navigate 탓음"));
   const setIsLoggedIn = useSetRecoilState(isLoggedInState);
-
+  console.log("setIsLoggedIn 지났음");
   useEffect(() => {
+    console.log("useEffect 들어옴")
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -29,15 +32,18 @@ const Auth = () => {
         localStorage.setItem('Authorization', response.headers.authorization);
         localStorage.setItem('Refresh', response.headers.refresh);
         setIsLoggedIn(true);
-        navigate('/');  
+        // navigate('/');  
         }
 
-      } catch (error) {
+      } 
+      
+      catch (error) {
+        console.log("캐치 확인하기")
         console.log('kakao 소셜 로그인 에러 : ', error);
         // window.alert('소셜 로그인에 실패하였습니다.');
         toast.error("카카오 로그인에 문제가 생겼습니다.");
 
-        window.location.href = `/`;
+        // window.location.href = `/`;
       }
     };
 
