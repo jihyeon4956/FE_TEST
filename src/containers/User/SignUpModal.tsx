@@ -56,6 +56,7 @@ function SignUpModal() {
     username: string;
     password: string;
     nickname: string;
+    checkPassword: string;
   };
 
   const signUp = async (info: postData) => {
@@ -71,6 +72,7 @@ function SignUpModal() {
   const data = {
     username: idInput,
     password: pwInput,
+    checkPassword: pwCheckInput,
     nickname: nickNameInput,
   };
 
