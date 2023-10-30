@@ -9,8 +9,8 @@ const Auth = () => {
   console.log("라우팅탐");
   const code = window.location.search;
   console.log(code);
-  const navigate = useNavigate();
-  console.log("navigate 탓음"));
+  // const navigate = useNavigate();
+  console.log("navigate 탓음");
   const setIsLoggedIn = useSetRecoilState(isLoggedInState);
   console.log("setIsLoggedIn 지났음");
   useEffect(() => {
