@@ -11,6 +11,7 @@ type ButtonsProps = {
   btnhoverbg: string;
   btnactivebg: string;
   borderradius: string;
+  type?: 'button' | 'submit';
   onClick: () => void;
 };
 
@@ -25,6 +26,8 @@ export default function CustomizedButtons({
   borderradius,
   onClick,
 }: ButtonsProps) {
+  const fontFamily = "'TmoneyRoundWind', sans-serif";
+
   let width: string = ''; // 초기화 -> 변수가 할당되기 전에 사용되었다는 오류 막음
   let height: string = '';
 
@@ -44,11 +47,15 @@ export default function CustomizedButtons({
   } else if (size === 'signUp') {
     width = '146px';
     height = '57px';
+  } else if (size === 'mileage') {
+    width = '249px';
+    height = '57px';
   }
 
   return (
     <Stack spacing={2} direction="row">
       <ColorButton
+        style={{ fontFamily }}
         width={width}
         height={height}
         fontcolor={fontcolor}
@@ -80,7 +87,7 @@ const ColorButton = styled(Button)<{
   width: props.width,
   color: props.fontcolor,
   backgroundColor: props.btnbg,
-  borderradius: props.borderradius,
+  borderRadius: props.borderradius,
   fontSize: props.fontSize,
   boxShadow: 'none',
   textTransform: 'none',

@@ -7,6 +7,12 @@ export type varifyPw = {
   enterPassword: string;
 }
 
+export type kakaoVarifyPw = {
+  password: string;
+  newPassword: string;
+  newCheckPassword: string;
+}
+
 export type updateInfoResponse = {
   data: myInfo;
   msg: string;
