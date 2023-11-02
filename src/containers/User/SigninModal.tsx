@@ -64,16 +64,16 @@ function SignInModal() {
     setLoginMoadal(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // 기본 제출 이벤트 방지
-    if (idInput === '' || pwInput === '') {
-      setAllCheckMessag('모든 정보를 입력해주세요.');
-      return;
-    } else {
-      setAllCheckMessag('');
-    }
-    login(data);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault(); // 기본 제출 이벤트 방지
+  //   if (idInput === '' || pwInput === '') {
+  //     setAllCheckMessag('모든 정보를 입력해주세요.');
+  //     return;
+  //   } else {
+  //     setAllCheckMessag('');
+  //   }
+  //   login(data);
+  // };
 
   const kakaoLogin: () => void = () => {
     const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_REST_API_KEY}&redirect_uri=${import.meta.env.VITE_APP_FE_URL}/login/kakao&response_type=code`;
@@ -97,7 +97,7 @@ function SignInModal() {
         bgColor="#F1F8FF"
       >
         {loginMoadal ? (
-          <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
+          <form className="flex flex-col justify-center items-center">
             <h1 className="text-[34px] text-blue my-[40px]">로그인</h1>
             <div className="w-[530px] mb-[45px] relative">
               <div className="mb-[22px]">
